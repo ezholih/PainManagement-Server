@@ -9,6 +9,28 @@ import com.my.finalproject.model.DoctorProfile;
 
 public class DoctorDAO extends DAO{
 	
+	@SuppressWarnings("unchecked")
+	public ArrayList<DoctorProfile> getDoctors(){
+		
+		Session session = null;
+		ArrayList<DoctorProfile> doctorList = new ArrayList<DoctorProfile>();
+		
+		try{
+			session = getSession();
+			Query docQuery = session.createQuery("from DoctorProfile");
+			doctorList = (ArrayList<DoctorProfile>)docQuery.list();
+			return doctorList;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+		finally{
+			if(session != null){
+				session.close();
+			}
+		}
+	}
+	
 	public DoctorProfile showDoctor(int id){
 		
 		Session session = null;

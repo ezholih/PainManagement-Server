@@ -1,5 +1,7 @@
 package com.my.finalproject.controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,12 @@ public class PopulateDoctorProfile {
 	
 	@Autowired
 	DoctorDAO doctordao;
+	
+	@RequestMapping(value="/doctorlist",method=RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<DoctorProfile> listDoctor(){
+		return doctordao.getDoctors();
+	}
 	
 	@RequestMapping(value="/doctor",method=RequestMethod.POST)
 	@ResponseBody
