@@ -5,6 +5,7 @@ public class WebUserAccount {
 	private String username;
 	private String password;
 	private int preuserid;
+	private int status;
 	
 	
 	public int getUserid() {
@@ -30,6 +31,12 @@ public class WebUserAccount {
 	}
 	public void setPreuserid(int preuserid) {
 		this.preuserid = preuserid;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 	

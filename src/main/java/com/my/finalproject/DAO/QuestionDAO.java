@@ -9,11 +9,11 @@ import org.hibernate.Transaction;
 import com.my.finalproject.model.AnswerInstruction;
 import com.my.finalproject.model.Answers;
 import com.my.finalproject.model.Questions;
-import com.my.finalproject.model.UserAccount;
 import com.my.finalproject.question.QuestionModel;
 import com.my.finalproject.question.QuestionType;
 
 
+@SuppressWarnings("unchecked")
 public class QuestionDAO extends DAO{
 	
 	public ArrayList<QuestionModel> listQuestion(QuestionType questiontype){

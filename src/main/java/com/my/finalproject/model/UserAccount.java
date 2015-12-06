@@ -1,10 +1,13 @@
 package com.my.finalproject.model;
 
-public class UserAccount {
 
+public class UserAccount {
+	
 	private int userid;
 	private String username;
 	private String userpassword;
+	private int status;
+	
 	public int getUserid() {
 		return userid;
 	}
@@ -23,6 +26,13 @@ public class UserAccount {
 	public void setUserpassword(String userpassword) {
 		this.userpassword = userpassword;
 	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
 	
 	
 	

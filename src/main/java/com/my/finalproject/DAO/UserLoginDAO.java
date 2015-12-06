@@ -2,7 +2,6 @@ package com.my.finalproject.DAO;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -36,6 +35,7 @@ public class UserLoginDAO extends DAO {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	public ArrayList<UserAccount> populateAccounts(){
 		Session session = null;
 		ArrayList<UserAccount> accountList = new ArrayList<UserAccount>();
@@ -71,6 +71,35 @@ public class UserLoginDAO extends DAO {
 			UserAccount ua = (UserAccount) query.uniqueResult();
 			ua.setUsername(useraccount.getUsername());
 			ua.setUserpassword(useraccount.getPassword());
+			ua.setStatus(useraccount.getStatus());
+			//ua.setUserid(useraccount.getUserid());
+			
+			tx.commit();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			if(session != null){
+				session.close();
+			}
+		}
+	}
+	
+	public void deactiveUser(WebUserAccount useraccount){
+		Session session = null;
+		Transaction tx = null;
+		int userid = useraccount.getPreuserid();
+		
+		System.out.println(useraccount);
+		
+		try{
+			session = getSession();
+			tx = session.beginTransaction();
+			
+			Query query = session.createQuery("from UserAccount where userid =:userid");
+			query.setString("userid", String.valueOf(userid));
+			UserAccount ua = (UserAccount) query.uniqueResult();
+			ua.setStatus(0);
 			//ua.setUserid(useraccount.getUserid());
 			
 			tx.commit();

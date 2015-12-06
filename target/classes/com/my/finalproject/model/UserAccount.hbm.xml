@@ -14,5 +14,8 @@
         <property name="userpassword" type="java.lang.String">
             <column name="USERPASSWORD" />
         </property>
+        <property name="status" type="int">
+            <column name="stat" />
+        </property>
     </class>
 </hibernate-mapping>

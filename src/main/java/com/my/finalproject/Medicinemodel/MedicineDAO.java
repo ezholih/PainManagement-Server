@@ -8,8 +8,10 @@ import org.hibernate.Session;
 
 import com.my.finalproject.DAO.DAO;
 
+@SuppressWarnings("unchecked")
 public class MedicineDAO extends DAO{
 	
+	@SuppressWarnings("rawtypes")
 	public ArrayList<MedicineAndPatient> getPatientMedicine(int id){
 		
 			Session session = null;
@@ -30,6 +32,7 @@ public class MedicineDAO extends DAO{
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public ArrayList<MedicineAndPatient> showMedicine(){
 		Session session = null;
 		try{
