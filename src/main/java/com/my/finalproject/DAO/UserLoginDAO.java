@@ -71,6 +71,7 @@ public class UserLoginDAO extends DAO {
 			UserAccount ua = (UserAccount) query.uniqueResult();
 			ua.setUsername(useraccount.getUsername());
 			ua.setUserpassword(useraccount.getPassword());
+			ua.setStatus(useraccount.getStatus());
 			//ua.setUserid(useraccount.getUserid());
 			
 			tx.commit();

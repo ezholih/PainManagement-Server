@@ -28,9 +28,10 @@
 				success : function(data) {
 					console.log(data);
 					var inmyfile = "";
-					inmyfile = "<tr>"+"<td>UserID</td>"+"<td>UserName</td>"+"<td>Password</td>"+"<td>Actions</td>"+"</tr>";
+					inmyfile = "<tr>"+"<td>UserID</td>"+"<td>UserName</td>"+"<td>Password</td>"+"<td>Status</td>"+"<td>Actions</td>"+"</tr>";
 					for(var i=0;i<data.length;i++){
-						inmyfile += "<tr passdata='"+data[i].userid+"'>" + "<td><input type='text' stu='1' value='"+data[i].userid+"' disabled='true'></td>" +"<td><input type='text' stu='1' value='"+data[i].username+"' disabled='true'></td>"+"<td><input type='text' stu='1' value='"+data[i].userpassword+"' disabled='true'></td>"+"<td><button type='button' class='btn btn-warning' id='modify'>Edit/Save</button><button type='button' class='btn btn-danger' id='deleteit'>Delete</button></td>"+"</tr>";
+						inmyfile += "<tr passdata='"+data[i].userid+"'>" + "<td><input type='text' stu='1' value='"+data[i].userid+"' disabled='true'></td>" +"<td><input type='text' stu='1' value='"+data[i].username+"' disabled='true'></td>"+"<td><input type='text' stu='1' value='"+data[i].userpassword+"' disabled='true'></td>" + 
+						"<td><input type='text' stu='1' value='"+data[i].status+"' disabled='true'></td>"+"<td><button type='button' class='btn btn-warning' id='modify'>Edit/Save</button><button type='button' class='btn btn-danger' id='deleteit'>Delete</button></td>"+"</tr>";
 					}
 					inmyfile += "<tr><td><input type='text' stu='1' value='' disabled='true'></td><td><input type='text' stu='1' value='' disabled='true'></td><td><input type='text' stu='1' value='' disabled='true'></td><td><button type='button' class='btn btn-success' id='addnew'>Add/Save</button></td></tr>"	
 					
@@ -63,13 +64,14 @@
 						var userid = $(this).parent().parent().children()[0].getElementsByTagName("input")[0].value; 
 						var username = $(this).parent().parent().children()[1].getElementsByTagName("input")[0].value;
 						var password = $(this).parent().parent().children()[2].getElementsByTagName("input")[0].value;
-	
+						var stat = $(this).parent().parent().children()[3].getElementsByTagName("input")[0].value;
+						
 						$.ajax(
 								{
 									type:'POST',
 									url:address + 'editaccounts',
 									contentType:"application/json",
-									data:JSON.stringify({preuserid:senddata,userid:userid,username:username,password:password}),
+									data:JSON.stringify({preuserid:senddata,userid:userid,username:username,password:password,status:stat}),
 									dataType:'json',
 									success:function(){
 											//alert("right");
