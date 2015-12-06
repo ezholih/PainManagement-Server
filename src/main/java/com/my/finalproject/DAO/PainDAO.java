@@ -1,13 +1,13 @@
 package com.my.finalproject.DAO;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.my.finalproject.model.PainCategory;
 
+@SuppressWarnings("unchecked")
 public class PainDAO extends DAO{
 	
 	public ArrayList<PainCategory> listpain(int id){

@@ -1,8 +1,6 @@
 package com.my.finalproject.question;
 
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my.finalproject.DAO.QuestionDAO;
-import com.my.finalproject.model.Questions;
 
 
 @Controller

@@ -2,7 +2,6 @@ package com.my.finalproject.programs;
 
 import java.util.ArrayList;
 
-import com.my.finalproject.model.ProgramDetails;
 
 public class SubCategoryModel {
 	

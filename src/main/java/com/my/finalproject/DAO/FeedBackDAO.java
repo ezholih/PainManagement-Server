@@ -8,6 +8,8 @@ import org.hibernate.Session;
 import com.my.finalproject.Feedbackcontrollers.QuestionModel;
 import com.my.finalproject.model.ActionFeedback;
 
+
+@SuppressWarnings("unchecked")
 public class FeedBackDAO extends DAO{
 
 	public ArrayList<QuestionModel> listAllFeedback(){

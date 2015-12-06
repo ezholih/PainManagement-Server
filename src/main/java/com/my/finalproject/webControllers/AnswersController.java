@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my.finalproject.DAO.QuestionDAO;
 import com.my.finalproject.model.Answers;
-import com.my.finalproject.model.UserAccount;
 
 
 @Controller

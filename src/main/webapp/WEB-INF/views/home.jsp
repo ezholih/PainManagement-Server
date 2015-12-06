@@ -119,13 +119,14 @@
 							var userid = $(this).parent().parent().children()[0].getElementsByTagName("input")[0].value; 
 							var username = $(this).parent().parent().children()[1].getElementsByTagName("input")[0].value;
 							var password = $(this).parent().parent().children()[2].getElementsByTagName("input")[0].value;
-		
+							var sta = 1;
+							
 							$.ajax(
 									{
 										type:'POST',
 										url:address + 'addaccounts',
 										contentType:"application/json",
-										data:JSON.stringify({userid:userid,username:username,userpassword:password}),
+										data:JSON.stringify({userid:userid,username:username,userpassword:password,status:sta}),
 										dataType:'json',
 										success:function(){
 												alert("right");

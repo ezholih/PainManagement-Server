@@ -13,6 +13,7 @@ import com.my.finalproject.programs.MainCategoryModel;
 import com.my.finalproject.programs.SubCategoryModel;
 import com.my.finalproject.programs.TempProgramModel;
 
+@SuppressWarnings("unchecked")
 public class ProgramDAO extends DAO{
 	
 	public ArrayList<MainCategoryModel> populatePrograms(ResourceBundle resourceBundle){

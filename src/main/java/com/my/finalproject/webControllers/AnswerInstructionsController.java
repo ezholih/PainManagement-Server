@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my.finalproject.DAO.QuestionDAO;
 import com.my.finalproject.model.AnswerInstruction;
-import com.my.finalproject.model.Questions;
-import com.my.finalproject.model.UserAccount;
 
 @Controller
 public class AnswerInstructionsController {
